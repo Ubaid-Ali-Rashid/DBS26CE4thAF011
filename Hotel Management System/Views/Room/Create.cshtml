@@ -1,0 +1,36 @@
+﻿@model HotelManagementSystem.Models.Domain.Room
+@{
+    ViewData["Title"] = "Add Room";
+}
+
+<h2>Add Room</h2>
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="RoomNumber" class="form-label"></label>
+        <input asp-for="RoomNumber" class="form-control" />
+        <span asp-validation-for="RoomNumber" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="TypeID" class="form-label"></label>
+        <input asp-for="TypeID" class="form-control" />
+        <span asp-validation-for="TypeID" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Floor" class="form-label"></label>
+        <input asp-for="Floor" class="form-control" />
+        <span asp-validation-for="Floor" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PricePerNight" class="form-label"></label>
+        <input asp-for="PricePerNight" class="form-control" />
+        <span asp-validation-for="PricePerNight" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

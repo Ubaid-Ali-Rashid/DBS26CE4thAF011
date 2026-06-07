@@ -1,0 +1,34 @@
+﻿@model HotelManagementSystem.Models.Domain.Housekeeping
+@{
+    ViewData["Title"] = "Add Task";
+}
+
+<h2>Add Housekeeping Task</h2>
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="RoomID" class="form-label"></label>
+        <input asp-for="RoomID" class="form-control" />
+        <span asp-validation-for="RoomID" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeID" class="form-label"></label>
+        <input asp-for="EmployeeID" class="form-control" />
+        <span asp-validation-for="EmployeeID" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ScheduledDate" class="form-label"></label>
+        <input asp-for="ScheduledDate" type="date" class="form-control" />
+        <span asp-validation-for="ScheduledDate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Status" class="form-label"></label>
+        <input asp-for="Status" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Notes" class="form-label"></label>
+        <input asp-for="Notes" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,19 @@
+﻿@model HotelManagementSystem.Models.Domain.Invoice
+@{
+    ViewData["Title"] = "Invoice Details";
+}
+
+<h2>Invoice Details</h2>
+<dl class="row">
+    <dt class="col-sm-3">Invoice ID</dt>
+    <dd class="col-sm-9">@Model.InvoiceID</dd>
+    <dt class="col-sm-3">Booking ID</dt>
+    <dd class="col-sm-9">@Model.BookingID</dd>
+    <dt class="col-sm-3">Total Amount</dt>
+    <dd class="col-sm-9">@Model.TotalAmount</dd>
+    <dt class="col-sm-3">Generated Date</dt>
+    <dd class="col-sm-9">@Model.GeneratedDate.ToShortDateString()</dd>
+    <dt class="col-sm-3">Paid</dt>
+    <dd class="col-sm-9">@(Model.PaidStatus ? "Yes" : "No")</dd>
+</dl>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

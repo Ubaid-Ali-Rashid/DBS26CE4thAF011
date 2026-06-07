@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Domain.Guest>
+
+@{
+    ViewData["Title"] = "Guests";
+}
+
+<h2>Guests</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Guest</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Guest ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>CNIC</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var guest in Model)
+        {
+            <tr>
+                <td>@guest.GuestID</td>
+                <td>@guest.FullName</td>
+                <td>@guest.Email</td>
+                <td>@guest.Phone</td>
+                <td>@guest.CNIC</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@guest.GuestID" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@guest.GuestID" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@guest.GuestID" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

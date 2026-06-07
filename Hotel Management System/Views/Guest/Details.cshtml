@@ -1,0 +1,29 @@
+﻿@model HotelManagementSystem.Models.Domain.Guest
+
+@{
+    ViewData["Title"] = "Guest Details";
+}
+
+<h2>Guest Details</h2>
+<dl class="row">
+    <dt class="col-sm-3">Guest ID</dt>
+    <dd class="col-sm-9">@Model.GuestID</dd>
+
+    <dt class="col-sm-3">Full Name</dt>
+    <dd class="col-sm-9">@Model.FullName</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+
+    <dt class="col-sm-3">Phone</dt>
+    <dd class="col-sm-9">@Model.Phone</dd>
+
+    <dt class="col-sm-3">CNIC</dt>
+    <dd class="col-sm-9">@Model.CNIC</dd>
+
+    <dt class="col-sm-3">Address</dt>
+    <dd class="col-sm-9">@Model.Address</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.GuestID" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

@@ -1,0 +1,21 @@
+﻿@model HotelManagementSystem.Models.Domain.RoomService
+@{
+    ViewData["Title"] = "Service Details";
+}
+
+<h2>Room Service Details</h2>
+<dl class="row">
+    <dt class="col-sm-3">Service ID</dt>
+    <dd class="col-sm-9">@Model.ServiceID</dd>
+    <dt class="col-sm-3">Booking ID</dt>
+    <dd class="col-sm-9">@Model.BookingID</dd>
+    <dt class="col-sm-3">Service Type ID</dt>
+    <dd class="col-sm-9">@Model.ServiceTypeID</dd>
+    <dt class="col-sm-3">Quantity</dt>
+    <dd class="col-sm-9">@Model.Quantity</dd>
+    <dt class="col-sm-3">Status</dt>
+    <dd class="col-sm-9">@Model.Status</dd>
+    <dt class="col-sm-3">Request Time</dt>
+    <dd class="col-sm-9">@Model.RequestTime</dd>
+</dl>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

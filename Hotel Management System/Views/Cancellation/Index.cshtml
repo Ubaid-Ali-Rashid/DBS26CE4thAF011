@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Domain.Cancellation>
+@{
+    ViewData["Title"] = "Cancellations";
+}
+
+<h2>Cancellations</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add Cancellation</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr><th>Cancellation ID</th><th>Booking ID</th><th>Reason</th><th>Refund</th><th>Date</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.CancellationID</td>
+                <td>@c.BookingID</td>
+                <td>@c.Reason</td>
+                <td>@c.RefundAmount</td>
+                <td>@c.CancelDate.ToShortDateString()</td>
+                <td><a asp-action="Details" asp-route-id="@c.CancellationID" class="btn btn-sm btn-info">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

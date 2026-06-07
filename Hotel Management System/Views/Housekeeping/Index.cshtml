@@ -1,0 +1,28 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Domain.Housekeeping>
+@{
+    ViewData["Title"] = "Housekeeping";
+}
+
+<h2>Housekeeping Tasks</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add Task</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr><th>Task ID</th><th>Room ID</th><th>Employee ID</th><th>Scheduled</th><th>Status</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var h in Model)
+        {
+            <tr>
+                <td>@h.TaskID</td>
+                <td>@h.RoomID</td>
+                <td>@h.EmployeeID</td>
+                <td>@h.ScheduledDate.ToShortDateString()</td>
+                <td>@h.Status</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@h.TaskID" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@h.TaskID" class="btn btn-sm btn-warning">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

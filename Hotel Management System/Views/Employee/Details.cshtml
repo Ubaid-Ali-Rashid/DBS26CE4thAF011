@@ -1,0 +1,24 @@
+﻿@model HotelManagementSystem.Models.Domain.Employee
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h2>Employee Details</h2>
+<dl class="row">
+    <dt class="col-sm-3">Employee ID</dt>
+    <dd class="col-sm-9">@Model.EmployeeID</dd>
+    <dt class="col-sm-3">Full Name</dt>
+    <dd class="col-sm-9">@Model.FullName</dd>
+    <dt class="col-sm-3">CNIC</dt>
+    <dd class="col-sm-9">@Model.CNIC</dd>
+    <dt class="col-sm-3">Phone</dt>
+    <dd class="col-sm-9">@Model.Phone</dd>
+    <dt class="col-sm-3">Role</dt>
+    <dd class="col-sm-9">@Model.Role</dd>
+    <dt class="col-sm-3">Salary</dt>
+    <dd class="col-sm-9">@Model.Salary</dd>
+    <dt class="col-sm-3">Hire Date</dt>
+    <dd class="col-sm-9">@Model.HireDate.ToShortDateString()</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.EmployeeID" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>

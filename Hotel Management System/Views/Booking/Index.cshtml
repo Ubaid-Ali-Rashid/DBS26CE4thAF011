@@ -1,0 +1,40 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Domain.Booking>
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<h2>Bookings</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">New Booking</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Guest ID</th>
+            <th>Room ID</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.BookingID</td>
+                <td>@b.GuestID</td>
+                <td>@b.RoomID</td>
+                <td>@b.CheckIn.ToShortDateString()</td>
+                <td>@b.CheckOut.ToShortDateString()</td>
+                <td>@b.Status</td>
+                <td>@b.TotalAmount</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@b.BookingID" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@b.BookingID" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@b.BookingID" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

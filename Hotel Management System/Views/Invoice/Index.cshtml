@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Domain.Invoice>
+@{
+    ViewData["Title"] = "Invoices";
+}
+
+<h2>Invoices</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Generate Invoice</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr><th>Invoice ID</th><th>Booking ID</th><th>Total Amount</th><th>Generated</th><th>Paid</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.InvoiceID</td>
+                <td>@i.BookingID</td>
+                <td>@i.TotalAmount</td>
+                <td>@i.GeneratedDate.ToShortDateString()</td>
+                <td>@(i.PaidStatus ? "Yes" : "No")</td>
+                <td><a asp-action="Details" asp-route-id="@i.InvoiceID" class="btn btn-sm btn-info">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

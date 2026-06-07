@@ -1,0 +1,28 @@
+﻿@model IEnumerable<HotelManagementSystem.Models.Domain.Employee>
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h2>Employees</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add Employee</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr><th>Employee ID</th><th>Full Name</th><th>Role</th><th>Phone</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.EmployeeID</td>
+                <td>@e.FullName</td>
+                <td>@e.Role</td>
+                <td>@e.Phone</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@e.EmployeeID" class="btn btn-sm btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@e.EmployeeID" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@e.EmployeeID" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

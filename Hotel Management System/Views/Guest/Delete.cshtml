@@ -1,0 +1,25 @@
+﻿@model HotelManagementSystem.Models.Domain.Guest
+
+@{
+    ViewData["Title"] = "Delete Guest";
+}
+
+<h2>Delete Guest</h2>
+<p>Are you sure you want to delete this guest?</p>
+
+<dl class="row">
+    <dt class="col-sm-3">Full Name</dt>
+    <dd class="col-sm-9">@Model.FullName</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+
+    <dt class="col-sm-3">CNIC</dt>
+    <dd class="col-sm-9">@Model.CNIC</dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="GuestID" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

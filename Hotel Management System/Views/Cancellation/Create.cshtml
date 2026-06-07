@@ -1,0 +1,31 @@
+﻿@model HotelManagementSystem.Models.Domain.Cancellation
+@{
+    ViewData["Title"] = "Add Cancellation";
+}
+
+<h2>Add Cancellation</h2>
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        <label asp-for="BookingID" class="form-label"></label>
+        <input asp-for="BookingID" class="form-control" />
+        <span asp-validation-for="BookingID" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Reason" class="form-label"></label>
+        <textarea asp-for="Reason" class="form-control"></textarea>
+        <span asp-validation-for="Reason" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="RefundAmount" class="form-label"></label>
+        <input asp-for="RefundAmount" class="form-control" />
+        <span asp-validation-for="RefundAmount" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CancelDate" class="form-label"></label>
+        <input asp-for="CancelDate" class="form-control" type="datetime-local" />
+        <span asp-validation-for="CancelDate" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
